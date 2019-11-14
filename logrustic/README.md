@@ -23,4 +23,4 @@ logrus.SetFormatter(logrustic.NewFormatter("logrus."))
 
 Works with most versions of logrus (developed vs logrus v1.4.2)
 
-For a complete list of built in elasticSearch fields that your logrus fields may collide with, run the following command in your Kibana console: `GET filebeat-7.0.0-beta1/_mapping`
+For a complete list of built in elasticSearch fields that your logrus fields may collide with if you choose to just use the plain json formatter, run the following command in your Kibana console: `GET filebeat-7.0.0-beta1/_mapping`
