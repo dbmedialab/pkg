@@ -1,3 +1,3 @@
 # pkg
 
-Did you make a nifty go-package that solves a problem that others might also want to solve? Put it in here!
+Did you make a neat go-package that solves a problem that others might also want solved? Put it in here!
