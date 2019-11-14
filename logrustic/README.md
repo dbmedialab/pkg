@@ -1,6 +1,6 @@
 # Logrustic
 
-This package can be used to set up a logrus-instance that definitely won't break the elasticSearch parser. (whereas vanilla logrus with json encoding usually will)
+This package can be used to set up a logrus-instance that definitely won't break the elasticSearch parser (whereas vanilla logrus with json encoding usually will).
 
 Usage examples:
 
