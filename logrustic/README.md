@@ -2,6 +2,8 @@
 
 This package can be used to set up a logrus-instance that definitely won't break the elasticSearch parser (whereas vanilla logrus with json encoding usually will).
 
+In practice, this enables Kibana to receive structured logs from your go-app, allowing you to browse (and search) by default logrus fields like `@message`, `func`, `level` and `{yourprefix.}file`, as well as any custom fields you've added via the `WithFields` method.
+
 Usage examples:
 
 ```go
