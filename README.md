@@ -1,3 +1,3 @@
 # pkg
 
-This is the place for packages that solve problems which more than one project needs solved.
+Did you make a neat go-package that solves a problem that others might also want solved? Put it in here!
