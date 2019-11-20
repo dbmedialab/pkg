@@ -50,7 +50,7 @@ func NewLogger(prefix string, level logrus.Level) (ll *logrus.Logger) {
 
 // NewFormatter - returns an elasticSearch-compatible logrus-formatter
 func NewFormatter(prefix string) (lf logrus.Formatter) {
-	lf = ElasticFormatter{
+	lf = &ElasticFormatter{
 		JSON: &logrus.JSONFormatter{
 			FieldMap: logrus.FieldMap{
 				logrus.FieldKeyFile: prefix + "file",
@@ -72,7 +72,7 @@ type ElasticFormatter struct {
 }
 
 // Format - returns an ES-sanitized and json-encoded version of the log-entry
-func (ef ElasticFormatter) Format(entry *logrus.Entry) ([]byte, error) {
+func (ef *ElasticFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 	// Copy data fields to a new fields-instance,
 	// and add a prefix to each key

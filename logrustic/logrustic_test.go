@@ -10,6 +10,7 @@ import (
 
 func TestElasticFields(t *testing.T) {
 	f := NewFormatter("test.")
+	logrus.SetFormatter(f)
 
 	b, err := f.Format(logrus.WithFields(logrus.Fields{
 		"error":  errors.New("wild walrus"),
