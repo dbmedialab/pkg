@@ -8,6 +8,8 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+// TestElasticFields - ensures that the logrustic-formatter
+// works as expected
 func TestElasticFields(t *testing.T) {
 	f := NewFormatter("test.")
 	logrus.SetFormatter(f)
