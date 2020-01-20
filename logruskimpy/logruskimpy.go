@@ -1,3 +1,5 @@
+// Package logruskimpy - provides short, skimpy log lines for console output
+// requires logrus >= v1.4.0
 package logruskimpy
 
 import (
