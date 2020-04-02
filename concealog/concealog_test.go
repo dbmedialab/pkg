@@ -6,15 +6,15 @@ import (
 
 // TestReplacer - ensures that the replacer works as expected
 func TestReplacer(t *testing.T) {
-	input := `GET /capi/v1/client/customer/ticket/15497076 HTTP/1.1
-Host: api.mediaconnect.no
+	input := `GET /userdata/17225061 HTTP/1.1
+Host: api.db.no
 User-Agent: Go-http-client/1.1
 Accept: application/json
 Authorization: Bearer 31e675cc-8ac7-4d18-a0fa-f4cd2e74a28a
 Accept-Encoding: gzip`
 
-	expected := `GET /capi/v1/client/customer/ticket/15497076 HTTP/1.1
-Host: api.mediaconnect.no
+	expected := `GET /userdata/17225061 HTTP/1.1
+Host: api.db.no
 User-Agent: Go-http-client/1.1
 Accept: application/json
 Authorization: Bearer *********
