@@ -7,13 +7,14 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 )
 
 // New - returns a logrus.Formatter that focuses on the log message
 // and data, by minimizing the function and file information
-func New() (lf logrus.Formatter) {
-	return &logrus.TextFormatter{
+func New() (lf log.Formatter) {
+	return &log.TextFormatter{
+		ForceColors:      true, // we don't want logrus to fall back on the non-color formatter
 		FullTimestamp:    false,
 		CallerPrettyfier: skimpyCaller,
 	}
