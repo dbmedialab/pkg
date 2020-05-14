@@ -34,12 +34,12 @@ func addCacheHeaders(r *mux.Router, ttl int, channels ...string) {
 func SetupRoutes(r *mux.Router) {
     // This specific song has its own route for some reason,
     // as well as a lower cache TTL and its own cache channel
-    specific := r.PathPrefix("/fischerspooner/emerge").Subrouter()
-    addCacheHeaders(pluss, 30, "fischerspooner", "emerge")
+    song := r.PathPrefix("/fischerspooner/emerge").Subrouter()
+    addCacheHeaders(song, 30, "fischerspooner", "emerge")
 
     // The rest of the discography gets no special treatment
-    pluss := r.PathPrefix("/fischerspooner").Subrouter()
-    addCacheHeaders(pluss, 300, "fischerspooner")
+    album := r.PathPrefix("/fischerspooner").Subrouter()
+    addCacheHeaders(album, 300, "fischerspooner")
 }
 
 ```
