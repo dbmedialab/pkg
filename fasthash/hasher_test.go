@@ -124,6 +124,9 @@ func TestThreadSafety(t *testing.T) {
 
 	// initialize hasher
 	h, err := New(kstr)
+	if err != nil {
+		t.Errorf("failed to initialize hasher: %s", err.Error())
+	}
 
 	// generate 10000 tests
 	for i := 0; i < 10000; i++ {
@@ -157,7 +160,7 @@ type threadTest struct {
 func (tt threadTest) run(h *Hasher, t *testing.T) {
 	hashStr, err := h.MakeBase64CheckSum(tt.input)
 	if err != nil {
-		t.Fatalf("Failed to generate hash: %s", err.Error())
+		t.Errorf("Failed to generate hash: %s", err.Error())
 	}
 
 	if hashStr != tt.expectedHash {

@@ -25,6 +25,8 @@ func TestCacheChannels(t *testing.T) {
 		Channel: "Cat_Articles, Cat_Pictures, Dog_Pictures",
 		Tag:     "Cat_Articles,Cat_Pictures,Dog_Pictures",
 	}
+
+	testCChan(cc, expected, t)
 }
 
 type cacheChanExpected struct {
@@ -46,7 +48,10 @@ func testCChan(cc *CacheChannels, expected cacheChanExpected, t *testing.T) {
 	router.Use(cc.SendHeaders)
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("ok!"))
+		_, err := w.Write([]byte("ok!"))
+		if err != nil {
+			t.Errorf("error while writing response: %s", err.Error())
+		}
 	})
 
 	router.ServeHTTP(recorder, request) // perform the request
